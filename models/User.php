@@ -154,7 +154,7 @@ class User extends ActiveRecord implements IdentityInterface
         $this->auth_key = Yii::$app->security->generateRandomString();
     }
 
-    public function register($model)
+    public static function register($model)
     {
         $user = new User();
         if ($user->compose($model)) {
