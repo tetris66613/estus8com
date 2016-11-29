@@ -45,9 +45,16 @@ class InterkassaRefillForm extends Model
         $ik_pm_no = $transaction->id;
         $ik_am = $transaction->amount;
         $ik_desc = 'test';
+        $ik_cur = 'UAH';
 
-        $ik = ['ik_co_id', 'ik_pm_no', 'ik_am', 'ik_desc'];
-        sort($ik, SORT_STRING);
+        $ik = [
+            'ik_co_id' => $ik_co_id,
+            'ik_pm_no' => $ik_pm_no,
+            'ik_am' => $ik_am,
+            'ik_desc' => $ik_desc,
+            'ik_cur' => $ik_cur,
+        ];
+        ksort($ik, SORT_STRING);
         //file_put_contents('/var/www/test.txt', print_r($ik, true)); exit;
         $ik[] = $secretKey;
         $ik_sign = base64_encode(md5(implode(':', $ik), true));
@@ -56,6 +63,7 @@ class InterkassaRefillForm extends Model
         $url .= '&ik_pm_no=' . $ik_pm_no;
         $url .= '&ik_am=' . $ik_am;
         $url .= '&ik_desc=' . $ik_desc;
+        $url .= '&ik_cur=' . $ik_cur;
         $url .= '&ik_sign=' . $ik_sign;
 
         return $url;
