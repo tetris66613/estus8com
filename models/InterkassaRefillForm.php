@@ -55,6 +55,7 @@ class InterkassaRefillForm extends Model
         $url .= '?ik_co_id=' . $ik_co_id;
         $url .= '&ik_pm_no=' . $ik_pm_no;
         $url .= '&ik_am=' . $ik_am;
+        $url .= '&ik_desc=' . $ik_desc;
         $url .= '&ik_sign=' . $ik_sign;
 
         return $url;
