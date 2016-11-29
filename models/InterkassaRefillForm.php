@@ -52,7 +52,7 @@ class InterkassaRefillForm extends Model
         $ik_sign = base64_encode(md5(implode(':', $ik), true));
 
         $url .= '?ik_co_id=' . $ik_co_id;
-        $url .= '&ik_co_no=' . $ik_pm_no;
+        $url .= '&ik_pm_no=' . $ik_pm_no;
         $url .= '&ik_am=' . $ik_am;
         $url .= '&ik_sign=' . $ik_sign;
 
