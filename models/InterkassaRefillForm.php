@@ -44,8 +44,9 @@ class InterkassaRefillForm extends Model
         $secretKey = isset($params['ik_secretKey']) ? $params['ik_secretKey'] : '';
         $ik_pm_no = $transaction->id;
         $ik_am = $transaction->amount;
+        $ik_desc = 'test';
 
-        $ik = ['ik_co_id', 'ik_pm_no', 'ik_am'];
+        $ik = ['ik_co_id', 'ik_pm_no', 'ik_am', 'ik_desc'];
         ksort($ik, SORT_STRING);
         $ik[] = $secretKey;
         //file_put_contents('/var/www/test.txt', print_r($ik, true)); exit;
