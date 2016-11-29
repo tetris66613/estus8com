@@ -8,6 +8,8 @@ if (realpath($secretParamsPath)) {
     $secretParams = [];
 }
 
+$params = array_merge($params, $secretParams);
+
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
