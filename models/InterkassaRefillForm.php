@@ -47,9 +47,9 @@ class InterkassaRefillForm extends Model
         $ik_desc = 'test';
 
         $ik = ['ik_co_id', 'ik_pm_no', 'ik_am', 'ik_desc'];
-        ksort($ik, SORT_STRING);
-        $ik[] = $secretKey;
+        sort($ik, SORT_STRING);
         //file_put_contents('/var/www/test.txt', print_r($ik, true)); exit;
+        $ik[] = $secretKey;
         $ik_sign = base64_encode(md5(implode(':', $ik), true));
 
         $url .= '?ik_co_id=' . $ik_co_id;
