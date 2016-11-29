@@ -54,6 +54,8 @@ class InterkassaRefillForm extends Model
             'ik_desc' => $ik_desc,
             'ik_cur' => $ik_cur,
         ];
+        // add test - comment for real
+        //$ik['ik_pw_via'] = 'test_interkassa_test_xts';
         ksort($ik, SORT_STRING);
         //file_put_contents('/var/www/test.txt', print_r($ik, true)); exit;
         $ik[] = $secretKey;
@@ -65,7 +67,7 @@ class InterkassaRefillForm extends Model
         $url .= '&ik_desc=' . $ik_desc;
         $url .= '&ik_cur=' . $ik_cur;
         $url .= '&ik_sign=' . $ik_sign;
-
+        //$url .= '&ik_pw_via=' . $ik['ik_pw_via'];
         return $url;
     }
 
