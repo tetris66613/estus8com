@@ -6,7 +6,7 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-use app\models\InterkassaRefillForm;
+use app\models\TestRecaptchaForm;
 
 class TestController extends Controller
 {
@@ -49,6 +49,10 @@ class TestController extends Controller
 
     public function actionRecaptcha()
     {
-        return $this->render('recaptcha');
+        $model = new TestRecaptchaForm();
+
+        return $this->render('recaptcha', [
+            'model' => $model,
+        ]);
     }
 }

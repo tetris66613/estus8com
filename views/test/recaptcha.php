@@ -3,12 +3,13 @@
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
-$this->registerJsFile('https://www.google.com/recaptcha/api.js', ['position' => \yii\web\View::POS_HEAD]);
+//$this->registerJsFile('https://www.google.com/recaptcha/api.js', ['position' => \yii\web\View::POS_HEAD]);
 
 $this->title = 'Recaptcha';
 
 ?>
 <?php $form = ActiveForm::begin() ?>
-<div class="g-recaptcha" data-sitekey="6Lcidw8UAAAAACxFtQsBP6JS9Blo2fl2Ca0SY1OT"></div>
+<?= $form->field($model, 'testfield') ?>
+<?= $form->field($model, 'testrecaptcha')->widget(\himiklab\yii2\recaptcha\ReCaptcha::className()) ?>
 <?=  Html::submitButton('test', ['class' => 'btn btn-success']) ?>
 <?php ActiveForm::end() ?>
