@@ -80,7 +80,7 @@ class InterkassaController extends Controller
     public function actionInteraction()
     {
         if (false) {
-            Yii::$app->response->setStatusCode(200, 'OK')->send();
+            Yii::$app->response->setStatusCode(200, 'OK');
         }
     }
 }

@@ -51,6 +51,10 @@ class TestController extends Controller
     {
         $model = new TestRecaptchaForm();
 
+        if ($model->load(Yii::$app->request->post()) && $model->test()) {
+            return $this->redirect(['/site/index']);
+        }
+
         return $this->render('recaptcha', [
             'model' => $model,
         ]);
